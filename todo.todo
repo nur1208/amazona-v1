@@ -1,0 +1,57 @@
+create react app named frontend (x)
+remove everything in src except app.jsx index.css, index.js (x) 
+add jsconfig.json to frontend (x)
+modify app.jsx (x)
+    add div with grid-container class
+        add header with row class 
+            add div 
+                add a with brand class and href = "/" {amazon}
+            add div
+                add a href="/cart" {cart}
+        add grid-container in index.css under layout section
+             display: grid;
+            grid-template-areas:
+                "header"
+                "main"
+                "footer";
+            grid-template-columns: 1fr;
+            grid-template-rows: 5rem 1fr 5rem;
+            height: 100%;
+        add header tag in index.css under layout section
+             grid-area: header;
+            background-color: rgb(26, 163, 159); 
+        add main 
+            add ul
+                add 7 li {product}(temp)
+        add footer with row and center classes  tags
+            ADD all right to it;
+modify index.css for layout and comment css style
+    #root {
+  height: 100%;
+    }
+        html {
+        font-size: 62.5%; /* 16px * 62.5 = 10px = 1rem*/
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        height: 100vh;
+        font-size: 1.6rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+            "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+            sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+        text-decoration: none;
+    }
+create product component.
+create rating comp.
+set up store
+create productListReducer and its actions and constants
+set up the server 
+create productRouter
+create product model in MongoDB using mongoose
+
+modify main tag in app.jsx to show product comp
