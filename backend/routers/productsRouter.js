@@ -18,4 +18,12 @@ productRouter.post(
     res.send({ createdProducts });
   })
 );
+
+productRouter.get(
+  "/:id",
+  expressAsyncHandler(async (req, res) => {
+    const product = await productModel.findById(req.params.id);
+    res.send(product);
+  })
+);
 export default productRouter;
