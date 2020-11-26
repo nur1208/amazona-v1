@@ -75,3 +75,11 @@ Content-Type: application/json
 }
 
 ###
+
+POST http://localhost:3001/api/users/signin 
+Content-Type: application/json
+
+{
+      "email":  "medo12089@yahoo.com",
+      "password": "1234"
+}

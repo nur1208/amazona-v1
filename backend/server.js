@@ -1,6 +1,7 @@
 import express from "express";
 import productRouter from "./routers/productsRouter.js";
 import mongoose from "mongoose";
+import userRouter from "./routers/userRouter.js";
 const app = express();
 
 app.use(express.json());
@@ -11,6 +12,8 @@ mongoose.connect(process.env.MONGO || "mongodb://localhost/amazona-v1", {
   useUnifiedTopology: true,
   useCreateIndex: true,
 });
+app.use("/api/users", userRouter);
+
 app.use("/api/products", productRouter);
 
 app.get("/", (req, res) => {
