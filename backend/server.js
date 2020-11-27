@@ -2,6 +2,7 @@ import express from "express";
 import productRouter from "./routers/productsRouter.js";
 import mongoose from "mongoose";
 import userRouter from "./routers/userRouter.js";
+import orderRouter from "./routers/orderRouter.js";
 const app = express();
 
 app.use(express.json());
@@ -12,6 +13,12 @@ mongoose.connect(process.env.MONGO || "mongodb://localhost/amazona-v1", {
   useUnifiedTopology: true,
   useCreateIndex: true,
 });
+app.get("/api/config/paypal", (req, res) => {
+  res.send(process.env.PAYPAL_CLIENT_ID || "sd");
+});
+
+app.use("/api/orders", orderRouter);
+
 app.use("/api/users", userRouter);
 
 app.use("/api/products", productRouter);
